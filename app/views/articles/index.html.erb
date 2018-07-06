@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+<h1>Chat articles</h1>
+ 
+<%= link_to 'Msg me', new_article_path , {:class=>"btn btn-primary"} %><br></br>
+
+ 
+<table class="table table-striped">
+  <thead></thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+  </thead>
+ <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <th scope="row"><%= article.id %></th>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
+ </div>
+   </div>
